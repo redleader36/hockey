@@ -5,6 +5,12 @@ class CreatePositions < ActiveRecord::Migration
       t.string :abbr
       t.timestamps
     end
+
+    Position.create(:label => 'Goalie', :abbr => 'gl')
+    Position.create(:label => 'Defensemen', :abbr => 'dm')
+    Position.create(:label => 'Right Wing', :abbr => 'rw')
+    Position.create(:label => 'Left Wing', :abbr => 'lw')
+    Position.create(:label => 'Center', :abbr => 'cn')
   end
 
   def self.down

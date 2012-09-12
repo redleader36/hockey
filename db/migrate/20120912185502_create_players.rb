@@ -2,7 +2,9 @@ class CreatePlayers < ActiveRecord::Migration
   def self.up
     create_table :players do |t|
       t.string :first_name
-      t.stringposition_id :last_name
+      t.string :last_name
+      t.integer :team_id 
+      t.integer :position_id 
       t.integer :number
       t.timestamps
     end
