@@ -1,0 +1,18 @@
+<% title "Teams" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Number</th>
+    <th>Captain</th>
+  </tr>
+  <% for team in @teams %>
+    <tr>
+      <td><%= team.name %></td>
+      <td><%= team.number %></td>
+      <td><%= team.captain_id %></td>
+      <td><%= link_to "Show", team %></td>
+    </tr>
+  <% end %>
+</table>
+

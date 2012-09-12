@@ -1,0 +1,19 @@
+one:
+  date: 2012-09-12
+  time: 2012-09-12 12:10:33
+  referee_roster_id: 1
+  home_team_id: 1
+  home_goalie_id: 1
+  away_team_id: 1
+  away_goalie_id: 1
+  notes: MyText
+
+two:
+  date: 2012-09-12
+  time: 2012-09-12 12:10:33
+  referee_roster_id: 1
+  home_team_id: 1
+  home_goalie_id: 1
+  away_team_id: 1
+  away_goalie_id: 1
+  notes: MyText

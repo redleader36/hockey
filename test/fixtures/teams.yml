@@ -1,0 +1,9 @@
+one:
+  name: MyString
+  number: 1
+  captain_id: 1
+
+two:
+  name: MyString
+  number: 1
+  captain_id: 1

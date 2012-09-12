@@ -1,0 +1,20 @@
+<% title "Assists" %>
+
+<table>
+  <tr>
+    <th>Game</th>
+    <th>Player</th>
+    <th>Team</th>
+    <th>Scored</th>
+  </tr>
+  <% for assist in @assists %>
+    <tr>
+      <td><%= assist.game_id %></td>
+      <td><%= assist.player_id %></td>
+      <td><%= assist.team_id %></td>
+      <td><%= assist.scored %></td>
+      <td><%= link_to "Show", assist %></td>
+    </tr>
+  <% end %>
+</table>
+

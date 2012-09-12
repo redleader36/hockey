@@ -1,0 +1,14 @@
+<% title "Penalty Types" %>
+
+<table>
+  <tr>
+    <th>Label</th>
+  </tr>
+  <% for penalty_type in @penalty_types %>
+    <tr>
+      <td><%= penalty_type.label %></td>
+      <td><%= link_to "Show", penalty_type %></td>
+    </tr>
+  <% end %>
+</table>
+

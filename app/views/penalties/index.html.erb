@@ -1,0 +1,22 @@
+<% title "Penalties" %>
+
+<table>
+  <tr>
+    <th>Game</th>
+    <th>Player</th>
+    <th>Team</th>
+    <th>Penalty Type</th>
+    <th>Duration</th>
+  </tr>
+  <% for penalty in @penalties %>
+    <tr>
+      <td><%= penalty.game_id %></td>
+      <td><%= penalty.player_id %></td>
+      <td><%= penalty.team_id %></td>
+      <td><%= penalty.penalty_type_id %></td>
+      <td><%= penalty.duration %></td>
+      <td><%= link_to "Show", penalty %></td>
+    </tr>
+  <% end %>
+</table>
+

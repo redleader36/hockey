@@ -1,0 +1,26 @@
+<% title "Penalty" %>
+
+<p>
+  <strong>Game:</strong>
+  <%= @penalty.game_id %>
+</p>
+<p>
+  <strong>Player:</strong>
+  <%= @penalty.player_id %>
+</p>
+<p>
+  <strong>Team:</strong>
+  <%= @penalty.team_id %>
+</p>
+<p>
+  <strong>Penalty Type:</strong>
+  <%= @penalty.penalty_type_id %>
+</p>
+<p>
+  <strong>Duration:</strong>
+  <%= @penalty.duration %>
+</p>
+
+<p>
+  <%= link_to "View All", penalties_path %>
+</p>

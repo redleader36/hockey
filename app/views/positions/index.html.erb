@@ -1,0 +1,16 @@
+<% title "Positions" %>
+
+<table>
+  <tr>
+    <th>Label</th>
+    <th>Abbr</th>
+  </tr>
+  <% for position in @positions %>
+    <tr>
+      <td><%= position.label %></td>
+      <td><%= position.abbr %></td>
+      <td><%= link_to "Show", position %></td>
+    </tr>
+  <% end %>
+</table>
+

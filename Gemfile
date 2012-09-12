@@ -6,6 +6,9 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+# gem 'mysql2', :group => :production
+
+gem 'activeadmin'
 
 
 # Gems used only for assets and not required
@@ -38,3 +41,5 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem "nifty-generators"
+
+gem "mocha", :group => :test

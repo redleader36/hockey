@@ -1,0 +1,20 @@
+<% title "Goals" %>
+
+<table>
+  <tr>
+    <th>Game</th>
+    <th>Player</th>
+    <th>Team</th>
+    <th>Scored</th>
+  </tr>
+  <% for goal in @goals %>
+    <tr>
+      <td><%= goal.game_id %></td>
+      <td><%= goal.player_id %></td>
+      <td><%= goal.team_id %></td>
+      <td><%= goal.scored %></td>
+      <td><%= link_to "Show", goal %></td>
+    </tr>
+  <% end %>
+</table>
+

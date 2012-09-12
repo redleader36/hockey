@@ -1,0 +1,22 @@
+<% title "Goal" %>
+
+<p>
+  <strong>Game:</strong>
+  <%= @goal.game_id %>
+</p>
+<p>
+  <strong>Player:</strong>
+  <%= @goal.player_id %>
+</p>
+<p>
+  <strong>Team:</strong>
+  <%= @goal.team_id %>
+</p>
+<p>
+  <strong>Scored:</strong>
+  <%= @goal.scored %>
+</p>
+
+<p>
+  <%= link_to "View All", goals_path %>
+</p>

@@ -1,4 +1,22 @@
 Hockey::Application.routes.draw do
+  resources :penalty_types
+
+  resources :penalties
+
+  resources :assists
+
+  resources :goals
+
+  resources :positions
+
+  resources :players
+
+  resources :referees
+
+  resources :teams
+
+  resources :games
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

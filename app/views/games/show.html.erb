@@ -1,0 +1,38 @@
+<% title "Game" %>
+
+<p>
+  <strong>Date:</strong>
+  <%= @game.date %>
+</p>
+<p>
+  <strong>Time:</strong>
+  <%= @game.time %>
+</p>
+<p>
+  <strong>Referee Roster:</strong>
+  <%= @game.referee_roster_id %>
+</p>
+<p>
+  <strong>Home Team:</strong>
+  <%= @game.home_team_id %>
+</p>
+<p>
+  <strong>Home Goalie:</strong>
+  <%= @game.home_goalie_id %>
+</p>
+<p>
+  <strong>Away Team:</strong>
+  <%= @game.away_team_id %>
+</p>
+<p>
+  <strong>Away Goalie:</strong>
+  <%= @game.away_goalie_id %>
+</p>
+<p>
+  <strong>Notes:</strong>
+  <%= @game.notes %>
+</p>
+
+<p>
+  <%= link_to "View All", games_path %>
+</p>

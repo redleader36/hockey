@@ -1,0 +1,11 @@
+one:
+  game_id: 1
+  player_id: 1
+  team_id: 1
+  scored: 1
+
+two:
+  game_id: 1
+  player_id: 1
+  team_id: 1
+  scored: 1

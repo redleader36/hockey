@@ -1,0 +1,13 @@
+one:
+  game_id: 1
+  player_id: 1
+  team_id: 1
+  penalty_type_id: 1
+  duration: 2012-09-12 14:27:24
+
+two:
+  game_id: 1
+  player_id: 1
+  team_id: 1
+  penalty_type_id: 1
+  duration: 2012-09-12 14:27:24
