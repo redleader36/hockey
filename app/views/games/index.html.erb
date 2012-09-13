@@ -1,28 +1,40 @@
-<% title "Games" %>
-
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Time</th>
-    <th>Referee Roster</th>
-    <th>Home Team</th>
-    <th>Home Goalie</th>
-    <th>Away Team</th>
-    <th>Away Goalie</th>
-    <th>Notes</th>
-  </tr>
-  <% for game in @games %>
+<%- model_class = Game -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
     <tr>
-      <td><%= game.date %></td>
-      <td><%= game.time %></td>
-      <td><%= game.referee_roster_id %></td>
-      <td><%= game.home_team_id %></td>
-      <td><%= game.home_goalie_id %></td>
-      <td><%= game.away_team_id %></td>
-      <td><%= game.away_goalie_id %></td>
-      <td><%= game.notes %></td>
-      <td><%= link_to "Show", game %></td>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%= model_class.human_attribute_name(:time) %></th>
+      <th><%= model_class.human_attribute_name(:referee_roster_id) %></th>
+      <th><%= model_class.human_attribute_name(:home_team_id) %></th>
+      <th><%= model_class.human_attribute_name(:home_goalie_id) %></th>
+      <th><%= model_class.human_attribute_name(:away_team_id) %></th>
+      <th><%= model_class.human_attribute_name(:away_goalie_id) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= link_to game.id, game_path(game) %></td>
+        <td><%= game.date %></td>
+        <td><%= game.time %></td>
+        <td><%= game.referee_roster_id %></td>
+        <td><%= game.home_team_id %></td>
+        <td><%= game.home_goalie_id %></td>
+        <td><%= game.away_team_id %></td>
+        <td><%= game.away_goalie_id %></td>
+        <td><%= game.notes %></td>
+        <td><%=l game.created_at %></td>
+        <td>
+          <%= link_to "Show", game, :class => 'btn'  %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
