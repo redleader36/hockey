@@ -11,7 +11,7 @@ class Player < ActiveRecord::Base
     "#{first_name.first.capitalize}. #{last_name.capitalize}"
   end
 
-   def to_label
+   def name
     "#{initial_name}"
   end
 end
