@@ -1,4 +1,6 @@
 Hockey::Application.routes.draw do
+  resources :games
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -18,8 +20,6 @@ Hockey::Application.routes.draw do
   resources :referees
 
   resources :teams
-
-  resources :games
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

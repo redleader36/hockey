@@ -41,6 +41,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem "nifty-generators"
+gem "nifty-generators", :group => :development
 
 gem "mocha", :group => :test

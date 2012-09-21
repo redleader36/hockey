@@ -9,19 +9,25 @@
   <dt><strong><%= model_class.human_attribute_name(:time) %>:</strong></dt>
   <dd><%= @game.time %></dd>
   <dt><strong><%= model_class.human_attribute_name(:home_team_id) %>:</strong></dt>
-  <dd><%= @game.home_team.name %></dd>
+  <dd><%= @game.home_team_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:home_goalie_id) %>:</strong></dt>
-  <dd><%= @game.home_goalie.name %></dd>
+  <dd><%= @game.home_goalie_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:away_team_id) %>:</strong></dt>
-  <dd><%= @game.away_team.name %></dd>
+  <dd><%= @game.away_team_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:away_goalie_id) %>:</strong></dt>
-  <dd><%= @game.away_goalie.name %></dd>
+  <dd><%= @game.away_goalie_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:notes) %>:</strong></dt>
   <dd><%= @game.notes %></dd>
-</dl></br>
-
+</dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               games_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_game_path(@game), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              game_path(@game),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
 </div>
