@@ -1,5 +1,5 @@
 class Game < ActiveRecord::Base
-  attr_accessible :date, :time, :home_team_id, :home_goalie_id, :away_team_id, :away_goalie_id, :notes
+  attr_accessible :date, :time, :home_team_id, :home_goalie_id, :away_team_id, :away_goalie_id, :notes, :referee_ids
 
   has_and_belongs_to_many :referees, :join_table => :games_referees
   has_many :goals

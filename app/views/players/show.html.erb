@@ -1,7 +1,5 @@
 <%- model_class = Player -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
-</div>
+<% title t('.title', :default => model_class.model_name.human) %>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
@@ -11,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:team_id) %>:</strong></dt>
   <dd><%= @player.team.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:position_id) %>:</strong></dt>
-  <dd><%= @player.position.label %></dd>
+  <dd><%= @player.try(:position).try(:name) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:number) %>:</strong></dt>
   <dd><%= @player.number %></dd>
 </dl><br>

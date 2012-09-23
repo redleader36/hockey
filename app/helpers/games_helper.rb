@@ -10,4 +10,9 @@ module GamesHelper
 		end
 		day_array
 	end	
+
+	def time_list
+		time_array = ["6:45", "8:45", "9:25", "10:45"]
+		time_array
+	end	
 end

@@ -16,10 +16,12 @@
     <div class="container">
       <div class="row">
         <div class="span9">
+          <div class="page-header">
+            <h1><%= yield(:title) %></h1>
           <% flash.each do |name, msg| %>
             <%= content_tag :div, msg, :id => "flash_#{name}" %>
           <% end %>
-          <%= content_tag :h1, yield(:title) if show_title? %>
+          </div>
           <%= yield %>
         </div>
         <div class="span3">

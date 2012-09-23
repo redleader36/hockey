@@ -1,47 +1,13 @@
 <%= semantic_form_for @game, :html => { :class => 'form-horizontal' } do |f| %>
-
-  <%= f.input :date,  :as => :select, :name => "Date", :collection => day_list("wednesday") %>
-    
-  <div class="control-group">
-    <%= f.label :time, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.time_select :time, :class => 'time_select' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :home_team_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :home_team_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :home_goalie_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :home_goalie_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :away_team_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :away_team_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :away_goalie_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :away_goalie_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :notes, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :notes, :class => 'text_area' %>
-    </div>
-  </div>
-
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                games_path, :class => 'btn' %>
-  </div>
+  <%= f.inputs do %>  
+    <%= f.input :date, :as => :select, :collection => day_list("wednesday") %>
+    <%= f.input :time, :as => :select, :collection => time_list %>
+    <%= f.input :referees, :as => :check_boxes %>
+    <%= f.input :home_team %>
+    <%= f.input :home_goalie, :as => :select, :collection => Player.find_all_by_position_id(1) %>
+    <%= f.input :away_team %>    
+    <%= f.input :away_goalie, :as => :select, :collection => Player.find_all_by_position_id(1) %>
+    <%= f.input :notes %>
+  <% end %>
+  <%= f.actions %>
 <% end %>

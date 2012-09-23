@@ -1,35 +1,30 @@
 <%- model_class = Game -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
+<% title t('.title', :default => model_class.model_name.human.pluralize) %>
+
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:date) %></th>
       <th><%= model_class.human_attribute_name(:time) %></th>
       <th><%= model_class.human_attribute_name(:home_team_id) %></th>
       <th><%= model_class.human_attribute_name(:home_goalie_id) %></th>
       <th><%= model_class.human_attribute_name(:away_team_id) %></th>
       <th><%= model_class.human_attribute_name(:away_goalie_id) %></th>
-      <th><%= model_class.human_attribute_name(:notes) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <td><%= link_to game.id, game_path(game) %></td>
         <td><%= game.date %></td>
-        <td><%= game.time %></td>
-        <td><%= game.home_team_id %></td>
-        <td><%= game.home_goalie_id %></td>
-        <td><%= game.away_team_id %></td>
-        <td><%= game.away_goalie_id %></td>
-        <td><%= game.notes %></td>
-        <td><%=l game.created_at %></td>
+        <td><%= game.time %></td>        
+        <td><%= link_to game.home_team.name, team_path(game.home_team) %></td>       
+        <td><%= link_to game.home_goalie.name, player_path(game.home_goalie) %></td>
+        <td><%= link_to game.away_team.name, team_path(game.away_team) %></td> 
+        <td><%= link_to game.away_goalie.name, player_path(game.away_goalie) %></td>
         <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      game_path(game), :class => 'btn btn-mini' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_game_path(game), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

@@ -7,6 +7,6 @@ class Referee < ActiveRecord::Base
   end
 
    def name
-    "#{initial_name}"
+    "#{last_name}"
   end
 end

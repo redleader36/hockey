@@ -1,7 +1,5 @@
 <%- model_class = Game -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
-</div>
+<% title t('.title', :default => model_class.model_name.human) %>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
@@ -9,13 +7,19 @@
   <dt><strong><%= model_class.human_attribute_name(:time) %>:</strong></dt>
   <dd><%= @game.time %></dd>
   <dt><strong><%= model_class.human_attribute_name(:home_team_id) %>:</strong></dt>
-  <dd><%= @game.home_team_id %></dd>
+  <dd><%= @game.home_team.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:home_goalie_id) %>:</strong></dt>
-  <dd><%= @game.home_goalie_id %></dd>
+  <dd><%= @game.home_goalie.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:away_team_id) %>:</strong></dt>
-  <dd><%= @game.away_team_id %></dd>
+  <dd><%= @game.away_team.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:away_goalie_id) %>:</strong></dt>
-  <dd><%= @game.away_goalie_id %></dd>
+  <dd><%= @game.away_goalie.name %></dd>
+  <dt><strong>Referees:</strong></dt>
+  <dl class="dl-horizontal">
+    <% for referee in @game.referees %>
+      <dd><%= referee.name %></dd>
+    <% end %>
+  </dl>
   <dt><strong><%= model_class.human_attribute_name(:notes) %>:</strong></dt>
   <dd><%= @game.notes %></dd>
 </dl>

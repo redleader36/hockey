@@ -1,13 +1,10 @@
 <%- model_class = Player -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
+<% title t('.title', :default => model_class.model_name.human.pluralize) %>
+<%= paginate @players %>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:first_name) %></th>
-      <th><%= model_class.human_attribute_name(:last_name) %></th>
+      <th>Player Name</th>
       <th><%= model_class.human_attribute_name(:team_id) %></th>
       <th><%= model_class.human_attribute_name(:position_id) %></th>
       <th><%= model_class.human_attribute_name(:number) %></th>
@@ -17,11 +14,9 @@
   <tbody>
     <% @players.each do |player| %>
       <tr>
-        <td><%= link_to player.id, player_path(player) %></td>
-        <td><%= player.first_name %></td>
-        <td><%= player.last_name %></td>
-        <td><%= player.team.name %></td>
-        <td><%= player.position.label %></td>
+        <td><%= link_to player.initial_name, player_path(player) %></td>
+        <td><%= link_to player.team.name, team_path(player.team) %></td>
+        <td><%= player.try(:position).try(:name) %></td>        
         <td><%= player.number %></td>
         <td>          
           <%= link_to "Show", player, :class => 'btn btn-mini'  %>
